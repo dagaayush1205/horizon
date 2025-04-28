@@ -12,7 +12,7 @@ ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
 time.sleep(2)
 
 # Open Camera
-cap = cv2.VideoCapture(4)  # 0 is default webcam
+cap = cv2.VideoCapture(0)  # 0 is default webcam
 
 def draw_hud(frame, pitch, roll):
     h, w, _ = frame.shape
