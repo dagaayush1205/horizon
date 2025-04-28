@@ -67,6 +67,9 @@ try:
             print("Failed to grab frame from camera")
             break
 
+        # 🔥 Resize frame to window size
+        frame = cv2.resize(frame, (window_width, window_height))
+
         if ser.in_waiting:
             line = ser.readline().decode('utf-8').strip()
             try:
@@ -84,7 +87,6 @@ try:
             except ValueError:
                 print(f"Invalid serial data: {line}")
 
-        # Exit with 'q'
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
